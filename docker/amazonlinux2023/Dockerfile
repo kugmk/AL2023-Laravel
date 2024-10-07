@@ -4,29 +4,27 @@ RUN dnf update -y
 RUN dnf swap -y libcurl-minimal libcurl-full && \
     dnf swap -y curl-minimal curl-full
 RUN dnf install -y libzip libzip-devel
-RUN dnf install -y php
-RUN dnf install -y php-json 
-RUN dnf install -y php-devel
-RUN dnf install -y php-mbstring
-RUN dnf install -y php-mysqli 
-RUN dnf install -y php-mysqlnd
-RUN dnf install -y php-gd
-RUN dnf install -y php-xml
-RUN dnf install -y php-fpm
-RUN dnf install -y php-curl
-RUN dnf install -y php-pdo
-RUN dnf install -y php-devel
-RUN dnf install -y php-pear
-RUN dnf install -y php-bcmath
-RUN dnf install -y php-cli
-RUN dnf install -y php-intl
-RUN dnf install -y php-ldap
-RUN dnf install -y php-opcache
-RUN dnf install -y php-readline
-#RUN dnf install -y php-redis
-RUN dnf install -y php-soap
-RUN dnf install -y php-xml
-RUN dnf install -y php-zip
+RUN dnf install -y php8.3
+RUN dnf install -y php8.3-common
+##RUN dnf install -y php8.3-json 
+RUN dnf install -y php8.3-devel
+##RUN dnf install -y php8.3-mysqli
+RUN dnf install -y php8.3-mysqlnd
+RUN dnf install -y php8.3-gd
+RUN dnf install -y php8.3-xml
+RUN dnf install -y php8.3-fpm
+##RUN dnf install -y php8.3-curl
+RUN dnf install -y php8.3-pdo
+##RUN dnf install -y php8.3-pear
+RUN dnf install -y php8.3-bcmath
+RUN dnf install -y php8.3-cli
+RUN dnf install -y php8.3-intl
+RUN dnf install -y php8.3-ldap
+RUN dnf install -y php8.3-opcache
+##RUN dnf install -y php8.3-readline
+#RUN dnf install -y php8.3-redis
+RUN dnf install -y php8.3-soap
+RUN dnf install -y php8.3-zip
 
 # php-redis
 WORKDIR /tmp
