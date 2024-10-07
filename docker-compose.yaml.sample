@@ -59,7 +59,8 @@ services:
             MYSQL_PASSWORD: 'laravel-app'
             MYSQL_ALLOW_EMPTY_PASSWORD: 1
         volumes:
-            - 'docker-mysql:/var/lib/mysql'
+            - './mysql/data:/var/lib/mysql'
+            - './src/mysql/tmp:/var/tmp/mysql'
         networks:
             - laravel-app
         healthcheck:
