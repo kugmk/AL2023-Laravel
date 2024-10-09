@@ -1,6 +1,7 @@
 FROM amazonlinux:2023
 
 RUN dnf update -y
+RUN dnf install -y systemd
 RUN dnf swap -y libcurl-minimal libcurl-full && \
     dnf swap -y curl-minimal curl-full
 RUN dnf install -y libzip libzip-devel
@@ -45,6 +46,10 @@ RUN curl -sS https://getcomposer.org/installer -o composer-setup.php && \
     php -r "unlink('composer-setup.php');" && \
     mv composer.phar /usr/local/bin/composer
 
+# scheduleのコマンドの設定
+COPY laravel-schedule.service /usr/lib/systemd/system/
+COPY laravel-schedule.timer /usr/lib/systemd/system/
+#RUN systemctl start laravel-schedule.timer コンテナ内で実行
 
 RUN mkdir -p /run/php-fpm
 RUN chmod 777 /run/php-fpm

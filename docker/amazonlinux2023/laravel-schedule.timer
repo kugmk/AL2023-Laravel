@@ -1,0 +1,12 @@
+[Unit]
+Description=LaravelScheduleSetting
+After=network.target
+ 
+[Timer]
+# 毎分実行 3秒ずれまで許可
+OnCalendar=*-*-* *:00/1:00
+AccuracySec=3sec
+
+[Install]
+# systemctl enableの設定が可能
+WantedBy=timers.target
