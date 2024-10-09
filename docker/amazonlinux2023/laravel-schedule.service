@@ -1,0 +1,8 @@
+[Unit]
+Description=LaravelScheduleSetting
+
+[Service]
+#laravel scheduleのコマンドの設定
+ExecStart=/usr/bin/php artisan schedule:run
+User=root
+WorkingDirectory=/var/www/html/src

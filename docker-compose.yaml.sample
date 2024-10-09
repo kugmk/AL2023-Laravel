@@ -37,6 +37,8 @@ services:
           - 'host.docker.internal:host-gateway'
         environment:
           WWWUSER: '1000'
+        privileged: true
+        command: /sbin/init
         ports:
           - 9000:9000 
         volumes:
